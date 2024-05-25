@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              background-color: #f4f4f4;
+              margin: 0;
+              padding: 20px;
+          }
+          h1, h2 {
+              color: #333;
+              text-align: center;
+          }
+          form {
+              background-color: #fff;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              max-width: 600px;
+              margin: 20px auto;
+          }
+          form label {
+              display: block;
+              margin: 10px 0 5px;
+              font-weight: bold;
+          }
+          form input[type="number"], 
+          form input[type="radio"], 
+          form input[type="submit"] {
+              width: 100%;
+              padding: 10px;
+              margin: 10px 0;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+          }
+          form input[type="submit"] {
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              cursor: pointer;
+              font-size: large;
+              border-radius: 15px;
+          }
+          form input[type="submit"]:hover {
+              background-color: #45a049;
+          }
+          hr {
+              margin: 20px 0;
+          }
+          .result {
+              background-color: #e7f3e7;
+              color: #3a7f3a;
+              padding: 15px;
+              border: 1px solid #d6e9c6;
+              border-radius: 4px;
+              margin: 20px 0;
+              text-align: center;
+          }
+          .result1 {
+              background-color: #e7f3e7;
+              color: #004f00;
+              padding: 15px;
+              border: 1px solid #d6e9c6;
+              border-radius: 4px;
+              margin: 20px 0;
+              text-align: center;
+          }
+          .radio-group {
+              display: flex;
+              align-items: center; 
+              margin: 5px ;
+          } 
+          .radio-group input[type="radio"] {
+                 margin-right: 5px;
+            }
+          .radio-group label {
+            margin-right: 15px;
+            margin-left: 15px;
+          }
+          .a{
+            text-indent: -120px;
+            color: #3a7f3a;
+          }
+          .a1{
+            text-indent: -120px;
+            color:red;
+          }
+      </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Loan Prediction Application</title>
+  </head>
+  <body>
+      <h2 class="result1">Loan Prediction Application in Django</h2>
+      <!-- <hr> -->
+          {% if result %}
+              <div class="result">
+                  <h1>Your loan will be {{ result }}</h1>
+              </div>
+          {% endif %}
+      
+      <form action="" method="POST">
+          {% csrf_token %}
+          
+          <label>Graduate:</label>
+          <div class="radio-group">
+              <input type="radio" id="graduate_yes" name="graduate" value="1" required>
+              <label for="graduate_yes" class="a">Yes</label>
+              <input type="radio" id="graduate_no" name="graduate" value="0" required>
+              <label for="graduate_no" class="a1">No</label>
+          </div>
+          
+          <label>Employed:</label>
+          <div class="radio-group">
+              <input type="radio" id="employed_yes" name="employed" value="1" required>
+              <label for="employed_yes" class="a">Yes</label>
+              <input type="radio" id="employed_no" name="employed" value="0" required>
+              <label for="employed_no" class="a1">No</label>
+          </div>
+          
+          <label for="income">Annual Income:</label>
+          <input type="number" id="income" name="income" required><br>
+          
+          <label for="loan">Loan Amount:</label>
+          <input type="number" id="loan" name="loan" required><br>
+          
+          <label for="term">Loan Terms (in months):</label>
+          <input type="number" id="term" name="term" required><br>
+          
+          <label for="cibil">CIBIL Score(300-900):</label>
+          <input type="number" id="cibil" name="cibil" min="300" max="900" required><br>
+
+          
+          <label for="asset">Total Assets:</label>
+          <input type="number" id="asset" name="asset" required><br>
+          
+          <input type="submit" value="Submit">
+          
+      </form>
+  </body>
+  </html>
+  
