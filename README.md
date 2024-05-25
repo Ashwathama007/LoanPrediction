@@ -51,5 +51,3 @@ This is a simple web application built with Django for predicting loan eligibili
 Contributions are welcome! Please submit a pull request or open an issue to discuss any changes.
 
 ---
-
-Feel free to customize this summary to better fit your project specifics and preferences.
